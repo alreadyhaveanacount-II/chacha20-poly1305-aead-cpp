@@ -1,0 +1,15 @@
+# Builds
+build/
+out/
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.sln
+*.slnx
+*.vcxproj*
+*.user
+
+# Misc.
+.DS_Store
