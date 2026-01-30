@@ -56,21 +56,6 @@ make -j$(nproc)
 
 ---
 
-## Uso simples da API
-
-```
-ChaCha20_Poly1305::encrypt(
-    key,
-    nonce,
-    plaintext,
-    aad,
-    ciphertext,
-    tag
-);
-```
-
----
-
 ## Teste de desempenho(traduzido)
 
 ```
