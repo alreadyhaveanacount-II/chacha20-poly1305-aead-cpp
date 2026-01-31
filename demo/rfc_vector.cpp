@@ -141,7 +141,10 @@ void rfc_test() {
 }
 
 int main(int argc, char* argv[]) {
-    // rfc_test();
-    test_performance();
+    // rfc_test(); // uncomment for correctness test
+    test_performance(); // simple performance test
+
+    std::cout << "\nPress any key to exit..." << std::endl;
+    std::cin.get();
     return 0;
 }
