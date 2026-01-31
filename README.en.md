@@ -53,6 +53,7 @@ make -j$(nproc)
 
 - Follows RFC 8439 state layout and quarter-round structure
 - Tested against all vectors provided in appendix A of RFC 8439
+- Designed only for little-endian and SSE supporting CPUs
 
 ---
 
