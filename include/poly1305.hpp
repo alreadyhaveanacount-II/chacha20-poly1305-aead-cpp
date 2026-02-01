@@ -22,25 +22,18 @@ private:
 		uint64_t low, high;
 		std::memcpy(&low, bytes, 8);
 		std::memcpy(&high, bytes + 8, 8);
-
+	
 		limbs[0] = low & mask26;
 		limbs[1] = (low >> 26) & mask26;
 		limbs[2] = ((low >> 52) | (high << 12)) & mask26;
 		limbs[3] = (high >> 14) & mask26;
 		limbs[4] = (high >> 40);
-
-		if (is_message_block) {
-			if (l == 16) {
-				limbs[4] |= (1ULL << 24);
-			}
-			else {
-				// Lidando com blocos parciais
-				int bit_pos = l * 8;
-				int limb_idx = bit_pos / 26;
-				int bit_in_limb = bit_pos % 26;
-				limbs[limb_idx] |= (1ULL << bit_in_limb);
-			}
-		}
+	
+		int bit_pos = l * 8;
+		int limb_idx = bit_pos / 26;
+		int bit_in_limb = bit_pos % 26;
+	
+		limbs[limb_idx] |= (1ULL << bit_in_limb);
 	}
 
 	void mul_mod_p(uint64_t* r, uint64_t* acc);
