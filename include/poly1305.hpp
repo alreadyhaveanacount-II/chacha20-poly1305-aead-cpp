@@ -105,7 +105,7 @@ public:
 
 	~Poly1305() {
 		CryptoHelper::secure_zero_memory(r, 5 * sizeof(uint64_t));
-		CryptoHelper::secure_zero_memory(s, 5 * sizeof(uint64_t));
+		CryptoHelper::secure_zero_memory(s, 2 * sizeof(uint64_t));
 		CryptoHelper::secure_zero_memory(acc, 5 * sizeof(uint64_t));
 		CryptoHelper::unlock_memory(this, sizeof(Poly1305));
 	}
